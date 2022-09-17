@@ -1,0 +1,9 @@
+{
+  "dishes": {
+    "bratwurst mit pueree und kohlrabi": ["bratwurst", "kartoffelpueree", "kohlrabigemuese"]
+  },
+  "ingredients": {
+    "kartoffelpueree": ["kartoffel", "suesskartoffel", "milch", "butter", "muskatnuss"],
+    "kohlrabigemuese": ["kohlrabi", "zwiebel", "sahne", "mehl", "bruehpulver"]
+  }
+}
