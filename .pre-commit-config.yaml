@@ -1,0 +1,50 @@
+default_stages: [commit, push]
+exclude: ^src/bin/
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+    -   id: check-json
+
+    -   id: check-merge-conflict
+
+    -   id: check-yaml
+
+    -   id: double-quote-string-fixer
+
+    -   id: end-of-file-fixer
+        types: [python]
+
+    -   id: fix-encoding-pragma
+        args: [--remove]
+
+    -   id: forbid-new-submodules
+
+    -   id: pretty-format-json
+        args: [--autofix]
+
+    -   id: trailing-whitespace
+        types: [python]
+
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    -   id: black
+        language_version: python3.10
+
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+    -   id: flake8
+
+-   repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v3.0.0a4
+    hooks:
+    -   id: pylint
+        language: system
+        args: [--rcfile=.pylintrc]
+
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.9.3
+    hooks:
+    -   id: isort
