@@ -1,0 +1,13 @@
+{
+  "dishes": {
+    "bratwurst mit pueree und kohlrabi": ["bratwurst", "kartoffelpueree", "kohlrabigemuese"],
+    "frikadellen mit pueree": ["frikadellen", "kartoffelpueree"],
+    "tortellini alla panna": ["tortellini", "alla panna"]
+  },
+  "ingredients": {
+    "kartoffelpueree": ["kartoffel", "suesskartoffel", "milch", "butter", "muskatnuss"],
+    "kohlrabigemuese": ["kohlrabi", "zwiebel", "sahne", "mehl", "bruehpulver"],
+    "frikadellen": ["hack", "paniermehl", "broetchen", "zwiebel", "ei", "milch"],
+    "alla panna": ["schinken", "sahne", "ei", "parmesan"]
+  }
+}
