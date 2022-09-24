@@ -17,7 +17,7 @@ class Interface:
                 '    Generate a meal plan (g) or\n'
                 '    Add new dishes and items (a)\n'
             ),
-            validator=WelcomeValidator()
+            validator=WelcomeValidator(),
         )
         if action == 'v':
             self.view_dishes_prompt()
@@ -34,7 +34,7 @@ class Interface:
         number = int(
             self.session.prompt(
                 f'How many dishes do you want to plan? [1..{len(dishes)}]',
-                validator=NumberValidator(max_value=len(dishes))
+                validator=NumberValidator(max_value=len(dishes)),
             )
         )
         plan = DishPlan()
