@@ -1,6 +1,6 @@
 from prompt_toolkit import PromptSession
 
-from wtenw.helper.prompt import WelcomeValidator, NumberValidator
+from wtenw.helper.prompt import WelcomeValidator, NumberValidator, NotInStringListValidator, TestCompleter
 from wtenw.picker.resolver import FOOD, fetch_dishes_and_create_order, add_dish_if_not_redundant, DishPlan
 
 
@@ -30,6 +30,7 @@ class Interface:
         print(fetch_dishes_and_create_order())
 
     def plan_prompt(self):
+        # TODO Display plan and prompt for replacing items (by index)
         dishes = fetch_dishes_and_create_order()
         number = int(
             self.session.prompt(
@@ -46,4 +47,24 @@ class Interface:
         print(plan.pretty_print())
 
     def add_dishes_prompt(self):
+        # Either define dish, define major item or possibly delete dish?
+        self._define_dish()
         pass
+
+    def _define_dish(self):
+        # Name dish
+        dish_name = self.session.prompt(
+            'What name should the dish have?',
+            validator=NotInStringListValidator(string_list=fetch_dishes_and_create_order()),
+        )
+        # add major items
+        items = []
+        while True:
+            item = self.session.prompt(
+                f'Please name a major item for {dish_name}. Otherwise type x.',
+                completer=TestCompleter(string_list=FOOD['ingredients'].keys()),
+            )
+            if item in ['x', 'X', 'x.', 'X.', ' X', ' x', 'x ', 'X ']:
+                break
+            items.append(item)
+        print(dish_name, items)
