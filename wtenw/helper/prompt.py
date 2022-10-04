@@ -1,5 +1,5 @@
-from prompt_toolkit.validation import Validator, ValidationError
 from prompt_toolkit.completion import Completer, Completion
+from prompt_toolkit.validation import ValidationError, Validator
 
 
 class WelcomeValidator(Validator):
@@ -29,7 +29,7 @@ class NotInStringListValidator(Validator):
 
     def validate(self, document):
         if document.text in self.string_list:
-            raise ValidationError(message=f'Please type a unique value. Name already known.')
+            raise ValidationError(message='Please type a unique value. Name already known.')
 
 
 class TestCompleter(Completer):

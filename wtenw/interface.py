@@ -1,7 +1,7 @@
 from prompt_toolkit import PromptSession
 
-from wtenw.helper.prompt import WelcomeValidator, NumberValidator, NotInStringListValidator, TestCompleter
-from wtenw.picker.resolver import FOOD, fetch_dishes_and_create_order, add_dish_if_not_redundant, DishPlan
+from wtenw.helper.prompt import NotInStringListValidator, NumberValidator, TestCompleter, WelcomeValidator
+from wtenw.picker.resolver import FOOD, DishPlan, add_dish_if_not_redundant, fetch_dishes_and_create_order
 
 
 class Interface:
