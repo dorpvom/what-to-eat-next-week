@@ -16,6 +16,9 @@ class DishPlan:
         self.major_items.extend(FOOD['dishes'][dish])
         self.ingredients.extend(resolve_ingredients(dish))
 
+    def pretty_print(self):
+        return json.dumps({'dishes': self.dishes, 'ingredients': self.ingredients}, indent=2)
+
 
 class UnknownDish(Exception):
     pass

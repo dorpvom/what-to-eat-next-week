@@ -2,3 +2,23 @@
 line-length = 120
 target-version = ['py310']
 skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+
+[tool.pylint.main]
+load-plugins = ["pylint.extensions.bad_builtin", "pylint.extensions.mccabe"]
+jobs = 0
+
+[tool.pylint."messages control"]
+confidence = []
+disable = ["missing-docstring" , "locally-disabled", "logging-format-interpolation", "logging-fstring-interpolation"]
+
+[tool.pylint.reports]
+output-format = "colorized"
+msg-template="{path}:{line}: [{symbol}:{obj}] {msg}"
+
+[tool.pylint.format]
+max-line-length = 120
