@@ -22,7 +22,3 @@ msg-template="{path}:{line}: [{symbol}:{obj}] {msg}"
 
 [tool.pylint.format]
 max-line-length = 120
-
-[tool.flake8]
-extend-ignore = ["E501", "W503"]
-extend-select = ["E504"]
